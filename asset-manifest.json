@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/NESTFLICK/static/css/main.8ee4de40.css",
+    "main.js": "/NESTFLICK/static/js/main.e52146b2.js",
+    "index.html": "/NESTFLICK/index.html",
+    "main.8ee4de40.css.map": "/NESTFLICK/static/css/main.8ee4de40.css.map",
+    "main.e52146b2.js.map": "/NESTFLICK/static/js/main.e52146b2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8ee4de40.css",
+    "static/js/main.e52146b2.js"
+  ]
+}
