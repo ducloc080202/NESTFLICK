@@ -9,7 +9,10 @@ const App=()=>{
     const [data,setData]=useState([])
     var getMovie=(key)=>{
         let infoAPI=`http://www.omdbapi.com/?s=${key}&apikey=2d148a17`
-        fetch(infoAPI)
+        fetch(infoAPI,{
+            referrerPolicy: "unsafe_url" 
+        }
+            )
             .then(function (res){
                 return res.json();
             })
