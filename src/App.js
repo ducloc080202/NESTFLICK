@@ -1,25 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, { useEffect, useState ,useRef} from "react";
+import ReactDOM from 'react-dom'
+import Card from "./component/card";
+import './App.css'
+// 2d148a17
+const App=()=>{
+    const inputRef = useRef(null);
+       
+    const [data,setData]=useState([])
+    var getMovie=(key)=>{
+        let infoAPI=`http://www.omdbapi.com/?s=${key}&apikey=2d148a17`
+        fetch(infoAPI)
+            .then(function (res){
+                return res.json();
+            })
+            .then(function(info){
+                if(info.Response=="True"){
+                    setData(info.Search)
+                }else{
+                    setData([])
+                }
+            })
+    }
+   
+    function handleClick() {
+        // console.log(inputRef.current.value);
+        getMovie(inputRef.current.value);   
+      }
+  
+   
+    return(
+        <>
+            <div className="header">
+                <h1>NESTFLICK</h1>
+                <input ref={inputRef} id="search" placeholder="Nhập tên phim cần tìm..."></input>
+                <button onClick={handleClick}>Tìm kiếm</button>
+        </div>
+        <div className="main">
+        
+        {
+            data.length>0?
+                data.map((item)=>{
+                                return (
+                                    <Card 
+                                    Year={item.Year}
+                                    Poster={item.Poster}
+                                    Title={item.Title}
+                                    />
+                                )
+                            }
+                        )
+                : 
+                <p id='notfound'> không tìm thấy phim...</p>
+        }
+       
+        </div>
+        </>
+    );
 }
 
 export default App;

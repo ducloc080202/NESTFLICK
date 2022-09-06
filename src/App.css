@@ -1,38 +1,82 @@
-.App {
-  text-align: center;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+    background-color: black;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+html{
+    color: white;
+}
+h1{
+    text-align: center;
+    margin-top: 30px;
+    color: red;
+    font-size: 80px;
+    text-shadow: 2px 0 #fff,1px 1px #fff,-1px 1px #fff;
+}
+.header{
+    border-bottom: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+input{
+    width: 400px;
+    margin: auto;
+    border: none;
+    height: 40px;
+    padding: 0 10px;
+    font-size: 18px;
+    background-color:rgb(0, 0, 0);
+    color: yellow;
+    
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: yellow;
+    opacity: 1; /* Firefox */
   }
+button{
+    width: 100px;
+    margin: 10px auto;
+    height: 40px;
+    background-color: red;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 4px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.main{
+    display: flex;
+    flex-wrap: wrap;
 }
-
-.App-link {
-  color: #61dafb;
+.card{
+    width: 30%;
+    margin: auto;
+    height: 480px;
+    border-radius: 10px;
+    overflow: hidden;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: rgb(43, 46, 14);
+    margin: 16px;
+    padding: 16px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card>img{
+    height: 360px;
+    max-width: 80%;
+    border-radius: 8px;
+}
+.card>h2,h3{
+    margin-top: 8px;
+    font-size: 20px;
+    color: rgb(209, 209, 127);
+}
+#notfound{
+    font-size: 30px;
+    color: yellow;
+    font-weight: 650;
+    padding: 10px 60px;
 }
